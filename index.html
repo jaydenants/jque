@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>foosball.com</title>
+    <style>
+
+        body{
+            display:flex;
+            flex-direction:column;
+            margin:0;
+            padding:0;
+        }
+        .hed{
+            width:100%;
+            height:220px;
+            position:relative;
+            background-color:black;
+            color:white;
+            text-align:center;
+            display:flex;
+            flex-direction:column;
+            align-self:center;
+        }
+        .hed>h1{
+            width:100%;
+            height:180px;
+            display:flex;
+            flex-direction: row;
+            justify-content:center;
+            align-self:center;
+            margin:0;
+            font-size:100px;
+            font-family: 'Varela Round', sans-serif;
+        }
+        #cin{
+            display:flex;
+            flex-direction: column;
+            align-self:center;
+            color:white;
+            margin-top:800px;
+            position:absolute;
+            background-color:black;
+            z-index:3;
+        }
+        #nad{
+            display:flex;
+            width:100%;
+            height:80px;
+            background-color: black;
+            color:white;
+            font-size:50px;
+            justify-content:space-around;
+            align-items:center;
+            font-family: 'Varela Round', sans-serif;
+        }
+        a {
+            color:white;
+            text-decoration:none;
+        }
+        #nadimg{
+            height:80px;
+            margin-top:15px;
+            
+        }
+        #joe{
+            z-index:0;
+            width:100%;
+            height:800px;
+        }
+        #arty{
+            width:100%;
+            height:400px;
+            margin-top:800px;
+            display:flex;
+            font-family: 'Varela Round', sans-serif;
+
+        }
+        #welc{
+            width:50%;
+            height:400px;
+            display:flex;
+            flex-direction: column;
+        }
+        #welc>h1{
+            font-size:55px;
+            color:#FB4F14;
+            align-self:center;
+        }
+        #welc>p{
+            font-size:25px;
+            align-self:center;
+            padding:15px;
+        }
+        #dip{
+            width:50%;
+            height:400px;
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items:center;
+            background-color: white;
+            z-index:2;
+        }
+        #dip>h1{
+            width:700px;
+            height:40px;
+            background-color:#FB4F14;
+            color:white;
+            font-family: 'Varela Round', sans-serif;
+        }
+        .part{
+            background-color:white;
+            width: 647.5px;
+            font-family: 'Varela Round', sans-serif;
+        }
+        #par1{
+            display:flex;
+            width:100%;
+            height:500px;
+            border-top: solid 30px black;
+            font-family: 'Varela Round', sans-serif;
+        }
+        #part1{
+            width:50%;
+            height:500px;
+        }
+        #part2{
+            width:50%;
+            height:500px;
+            display:flex;
+            flex-direction: column;
+        }
+        #part2>h1{
+            font-size:55px;
+            color:#FB4F14;
+            align-self:center;
+        }
+        #part2>p{
+            font-size:20px;
+            align-self:center;
+            padding:15px;
+            margin:0;
+        }
+        #but1{
+            background-color:#FB4F14;
+            color:white;
+            width:100px;
+            height:80px;
+            font-size:20px;
+            border:none;
+            border-radius:8px;
+            display:flex;
+            justify-content:center;
+            align-self:center;
+        }
+        #part1>img{
+            width:100%;
+            height:500px;
+        }
+        #par2{
+            display:flex;
+            width:100%;
+            height:500px;
+            font-family: 'Varela Round', sans-serif;
+            margin-top:10px;
+        }
+        #part3{
+            width:50%;
+            height:500px;
+            display:flex;
+            flex-direction: column;
+        }
+        #part3>h1{
+            font-size:55px;
+            color:#FB4F14;
+            align-self:center;
+        }
+        #part3>p{
+            font-size:20px;
+            align-self:center;
+            padding:15px;
+            margin:0;
+        }
+        #but2{
+            background-color:#FB4F14;
+            color:white;
+            width:100px;
+            height:80px;
+            font-size:20px;
+            border:none;
+            border-radius:8px;
+            display:flex;
+            justify-content:center;
+            align-self:center;
+        }
+        #part4{
+            width:50%;
+            height:500px;
+        }
+        #part4>img{
+            width:100%;
+            height:500px;
+        }
+        #par3{
+            display:flex;
+            width:100%;
+            height:500px;
+            font-family: 'Varela Round', sans-serif;
+            margin-top:10px;
+            border-bottom: solid 30px black;
+        }
+        #part5{
+            width:50%;
+            height:500px;
+        }
+        #part6{
+            width:50%;
+            height:500px;
+            display:flex;
+            flex-direction: column;
+        }
+        #part6>h1{
+            font-size:55px;
+            color:#FB4F14;
+            align-self:center;
+        }
+        #part6>p{
+            font-size:20px;
+            align-self:center;
+            padding:15px;
+            margin:0;
+        }
+        #but3{
+            background-color:#FB4F14;
+            color:white;
+            width:100px;
+            height:80px;
+            font-size:20px;
+            border:none;
+            border-radius:8px;
+            display:flex;
+            justify-content:center;
+            align-self:center;
+        }
+        #part5>img{
+            width:100%;
+            height:500px;
+        }
+        #dat{
+            width:100%;
+            height:200px;
+            font-family: 'Varela Round', sans-serif;
+            color:black;
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around;
+            align-items:center;
+        }
+        #foo{
+            width:100%;
+            height:200px;
+            background-color:black;
+            margin-top:100px;
+            color:white;
+            font-family: 'Varela Round', sans-serif;
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-start;
+            align-items: center;;
+            
+        }
+        #foo>p{
+            font-size:20px;
+            margin-top:170px;
+            margin-left:15px;
+            
+        }
+        #foothead{
+            font-size:80px;
+            margin-left:270px;
+            
+        }
+        #maps{
+            width:200px;
+            height:200px;
+        }
+        #maps>iframe{
+            width:180px;
+            height:180px;
+            margin-left:400px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <header class="hed">
+
+        <nav id="nad">
+            <a href="http://127.0.0.1:5500/jquery/Index4.html"><img src="/i.png" id="nadimg"></a>
+            <a href="http://127.0.0.1:5500/jquery/gallery.html">Gallery</a>
+            <a href="https://www.stubhub.com/cincinnati-bengals-tickets/performer/6045/?AffiliateID=49&adposition=&PCID=PSUSGOOSPOCINCI1B30834B15&AdID=607437482567&MetroRegionID=&psc=&psc=&ps=t2c-5968&ps_p=0&ps_c=17246329587&ps_ag=139716737434&ps_tg=kwd-304826154716&ps_ad=607437482567&ps_adp=&ps_adp=&ps_fi=&ps_fi=&ps_li=&ps_li=&ps_lp=9030153&ps_n=g&ps_d=c&gcid=C12289X486&utm_source=google&utm_medium=paid-search&utm_sub_medium=prospecting&utm_term=nb&utm_campaign=17246329587%3adefault&utm_content=default&keyword=139716737434_kwd-304826154716_c&creative=607437482567&utm_kxconfid=s2rshsbmv&kwt=nb&mt=e&kw=bengals+tickets&gclid=Cj0KCQiAtICdBhCLARIsALUBFcF3uEzTOjIA8mJgwiSq7J8IOa4VjweWM1S2ApGSWwM7ZwsTmqi7WWAaAt5xEALw_wcB">Tickets</a>
+            <a href="https://www.nflshop.com/cincinnati-bengals/t-36370248+z-9423154-598202139?ab={wt-static_graphic}{pt-home}{al-teamlinks}{ct-Cincinnati_Bengals}">Apparel</a>
+            <a href="https://www.nfl.com/">NFL</a>
+        </nav>
+
+        <div>
+            <img src="/Joe.webp" id="joe">
+        </div>
+        <h1 id="cin"><b><i>Cincinati Bengals</i></b></h1>
+    
+    </header>
+
+    <article id="arty">
+    <div id="welc">
+        <h1>A Little Bit About Us</h1>
+        <p>
+            Here is a quick overview of the Bengals organzation, our history, and our future.
+        </p>
+    </div>
+
+    <div id="dip">
+
+        <h1>Team History</h1>
+        <div class="part">
+            <p>
+                Established in 1967 by owner Jim Brown, the Cincinati Bengals would come to represent the great city of Cincinati in the NFL. The Bengals, named after the Cincinati zoo's rare white Bengal were estalbised in the American Football Leauge, the major rival of the NFL during the 50's and 60's. The AFL concisting of the now current AFC teams would be incorparated into the NFL forever chaning the landscape of Football in America forever, with the now 32 teams the NFL would capture the hearts of Americans across the country, the Bengals along with the Browns would become the face of Ohio football. The AFC-North division would be the home for the Begnals going forward and for the next 56 years the Begnals would enjoy an illustrious history as the best Ohio football team.
+            </p>
+        </div>
+        <h1>Joey Franchise</h1>
+        <div class="part">
+            <p>
+               Joeseph Lee Burrow born December 10th 1996 is the now current Cincinati Bengals quaterback and the face of the franchise. After leading arguably the greatest season by any quaterback in college football ever, winning a heisman, and leading the LSU tigers to a national championship, Joe Burrow would be selected first overall in the 2020 NFL draft by the Cincinati Bengals. After a season ending injury in his rookie season, Joe Burrow would lead a rejuvinated and fearless Benglas team to a 10-7 record, clinching a playoff seed. After elimniating the Radiers in the Wildcard round, Titans in the Divisional, and the Chiefs in the AFC chanpionship the Bengals would be heading to SuperBowl 56.
+            </p>
+        </div>
+        <h1>SuperBowl 56</h1>
+        <div class="part">
+            <p>
+                The last time the Bengals went to the SuperBowl had been 33 years ago, and now under the calm leadership of Joe Burrow the Cincinati Bengals had defied expecatations and now had a chance to hoist the lombardy. To the fans this was more than a game, ths was a dream come true after deacades of let-downs and oh so near finishes. The Bengals would end up loosing, but even in defeat the future still looked bright.
+            </p>
+        </div>
+        <h1>Our Future</h1>
+        <div class="part">
+            <p>
+                The future for the Bengals is bright, the teams young and talented, they have one of the best quaterbacks in the league, and generational reciver in Ja'Marr Chase. The Bengals are in a position to be a contender for nearly the next decade, 
+            </p>
+        </div>
+      
+    </div>
+    </article>
+
+
+    <article id="par1">
+        <div id="part1">
+            <img src="/paycorstadium.png">
+        </div>
+        
+        <div id="part2">
+            <h1>Paycor Stadium</h1>
+            <p>
+                Paycor Stadium, the home of the Cincinati Bengals. Paycor Stadium sits on the edge of the Ohio River giving a beatiful view of the river, the stadium is located in downtown Cincinati. The former Paul Brown stadium is now renamed to Paycor Stadium following a deal made between the Bengals organazation and Paycor and going forward Paycor stadium will be where the Bengals play their home games.
+            </p>
+
+        </div>
+    </article>
+
+    <article id="par2">
+        <div id="part3">
+            <h1>Our Founder</h1>
+            <p>
+                The father of the Bengals organazation is legendary coach Paul Brown. After co-founding the Browns franchise he headed to Cincy where he would found the Cincinati Bengals the best Ohio football team. While he might be remebered as the founder of Bronws and Bengals he is better remembered as the legendary coach who was on the leading edge of football. He would be inducted into the hall of fame in 1967, he would lay the foundation for caoching techniques and leadrship expected of a coach in the NFL.
+            </p>
+
+        </div>
+
+        <div id="part4">
+            <img src="/Pau, Brown.jpg">
+        </div>
+    </article>
+
+    <article id="par3">
+        <div id="part5">
+            <img src="/Cincinnati.jpg">
+        </div>
+
+        <div id="part6">
+            <h1>Our Community</h1>
+
+            <p>
+                The Bengals are proud to call Cincinati home, and we want to give back to the city and fans that have gave us so much. That's why we're proud to announce our give back to the community program. Through this program we've partenered with over five different local Cincinati charities and volunteer organazations. Our number one goal is to first and foremost give back to our fans and our community in any way we can, and through this program the Bengals are working towards a better future for all of Cincinati.
+            </p>
+
+        </div>
+    </article>
+
+
+    <article id="dat">
+        <p>
+            Enter a date for the chance to win a an all exclusive visit with a player of your choice.
+        </p>
+
+        <div id="datepick">
+            <p>Date: <input type="text" id="datepicker"></p>
+    </article>
+    
+
+    <footer id="foo">
+
+        <p>
+            Copyright Cincinnati Bengals 2023
+        </p>
+
+        <h1 id="foothead"><b><i>Bengals</i></b></h1>
+
+        <div id="maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.48365393376!2d-84.51824638443239!3d39.095457579540664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b14e8e995ab1%3A0x991715beb84d8bcb!2sPaycor%20Stadium!5e0!3m2!1sen!2sus!4v1671495049583!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+</body>
+<script>
+
+$( function() {
+    $( document ).tooltip();
+    $("#dip").accordion(
+        {
+            collapsible:true,active :false
+        }
+    );
+  } );
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+</script>
+</html>
