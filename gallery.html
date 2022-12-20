@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <style>
+          body{
+            display:flex;
+            flex-direction:column;
+            margin:0;
+            padding:0;
+        }
+        #heck{
+            width:100%;
+            height:80px;
+            position:relative;
+            background-color:black;
+            color:white;
+            text-align:center;
+            display:flex;
+            flex-direction:column;
+            align-self:center;
+        }
+        #heck>h1{
+            width:100%;
+            height:180px;
+            display:flex;
+            flex-direction: row;
+            justify-content:center;
+            align-self:center;
+            margin:0;
+            font-size:100px;
+            font-family: 'Varela Round', sans-serif;
+        }
+        #cin{
+            display:flex;
+            flex-direction: column;
+            align-self:center;
+        }
+        #nad{
+            display:flex;
+            width:100%;
+            height:80px;
+            background-color: black;
+            color:white;
+            font-size:50px;
+            justify-content:space-around;
+            align-items:center;
+            font-family: 'Varela Round', sans-serif;
+        }
+        a {
+            color:white;
+            text-decoration:none;
+        }
+        #nadimg{
+            height:80px;
+            margin-top:15px;
+        }
+        #mant{
+            width:100%;
+            height:600px;
+            display:flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+            margin-top:50px;
+        }
+        #img1>img{
+            width:60vw;
+            height:600px;
+            object-fit: cover;
+
+        }
+        #but1{
+            width:400px;
+            height:600px;
+            font-size:20px;
+            position:absolute;
+            margin-right: 750px;
+            z-index:2;
+            font-family: 'Varela Round', sans-serif;
+            border:none;
+            opacity:0%;
+            background-color: transparent;
+            color:white;
+        }
+        #but1:hover{
+            opacity:100%;
+            transition:2.5s;
+        }
+    
+        #but2{
+            width:400px;
+            height:600px;
+            font-size:20px;
+            position:absolute;
+            margin-left:750px;
+            z-index:2;
+            font-family: 'Varela Round', sans-serif;
+            border:none;
+            opacity:0%;
+            background-color: transparent;
+            color:white;
+        }
+        #but2:hover{
+            opacity:100%;
+            transition:2.5s;
+        }
+        #images{
+            width:60vw;
+            height:600px;
+            object-fit: cover;
+        }
+        #food{
+            width:100%;
+            height:200px;
+            background-color: black;
+            margin-top:100px;
+        }
+    </style>
+</head>
+<body>
+    <header id="heck">
+
+        <nav id="nad">
+            <a href="http://127.0.0.1:5500/jquery/Index4.html"><img src="./i.png" id="nadimg"></a>
+            <a href="http://127.0.0.1:5500/jquery/gallery.html">Gallery</a>
+            <a href="https://www.stubhub.com/cincinnati-bengals-tickets/performer/6045/?AffiliateID=49&adposition=&PCID=PSUSGOOSPOCINCI1B30834B15&AdID=607437482567&MetroRegionID=&psc=&psc=&ps=t2c-5968&ps_p=0&ps_c=17246329587&ps_ag=139716737434&ps_tg=kwd-304826154716&ps_ad=607437482567&ps_adp=&ps_adp=&ps_fi=&ps_fi=&ps_li=&ps_li=&ps_lp=9030153&ps_n=g&ps_d=c&gcid=C12289X486&utm_source=google&utm_medium=paid-search&utm_sub_medium=prospecting&utm_term=nb&utm_campaign=17246329587%3adefault&utm_content=default&keyword=139716737434_kwd-304826154716_c&creative=607437482567&utm_kxconfid=s2rshsbmv&kwt=nb&mt=e&kw=bengals+tickets&gclid=Cj0KCQiAtICdBhCLARIsALUBFcF3uEzTOjIA8mJgwiSq7J8IOa4VjweWM1S2ApGSWwM7ZwsTmqi7WWAaAt5xEALw_wcB">Tickets</a>
+            <a href="https://www.nflshop.com/cincinnati-bengals/t-36370248+z-9423154-598202139?ab={wt-static_graphic}{pt-home}{al-teamlinks}{ct-Cincinnati_Bengals}">Apparel</a>
+            <a href="https://www.nfl.com/">NFL</a>
+        </nav>
+    </header>
+
+    <main id="mant">
+        <button id="but1" onclick="CHANGEPIC(-1)"> Last </button>
+
+        <div id="img1">
+            <img id="images" src="./photo1.jpg">
+        </div>
+
+        <button id="but2" onclick="CHANGEPIC(1)"> Next </button>
+
+    </main>
+
+    <footer id="food">
+
+    </footer>
+    
+</body>
+<script>
+
+    var pic=1
+
+    function CHANGEPIC(add){
+        pic += add
+        console.log(pic)
+        if(pic == 11){ // max
+            pic = 1
+        }else if(pic == -1 || pic == 0){ // min
+            pic = 10
+        }
+        if(pic == "2" || pic == "3" || pic == "4" || pic == "6" || pic == "7" || pic == "10"){
+            document.getElementById("img1").childNodes[1].src="./photo"+ pic + ".webp";
+        }else{
+        document.getElementById("img1").childNodes[1].src="./photo"+ pic + ".jpg";
+
+            }
+        console.log("COOL")
+        $("#images").fadeOut();
+        $("#images").fadeIn();
+ 
+    }
+
+</script>
+</html>
